@@ -43,4 +43,5 @@ Topic_Selection_Based_On_SpringBoot 后端部分
 
 - 2022/10/26
 
-  - 完成教师接口以及文章接口
+  - 完成所有接口
+  - 接下来进行前端的开发 使用VUE实现
