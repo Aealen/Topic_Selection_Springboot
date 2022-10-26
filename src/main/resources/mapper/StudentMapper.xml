@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="me.aowu.mapper.StudentMapper">
+    <select id="queryAll" resultType="Student">
+        select * from student;
+    </select>
+
+    <select id="getStudentByName" parameterType="String" resultType="Student">
+        select * from student where s_name= #{s_name};
+    </select>
+    <select id="getStudentByAccount" parameterType="String" resultType="Student">
+        select * from student where s_account= #{s_account};
+    </select>
+
+    <insert id="addStudent" parameterType="Student">
+        insert into student
+            (s_name,s_gender,s_college,s_major,s_class,s_account,s_password)
+            values
+            (#{s_name},#{s_gender},#{s_college},#{s_major},#{s_class},#{s_account},#{s_password});
+    </insert>
+
+    <insert id="selectArticle" parameterType="Student">
+        insert into student (s_select) values (#{s_select});
+    </insert>
+
+
+</mapper>

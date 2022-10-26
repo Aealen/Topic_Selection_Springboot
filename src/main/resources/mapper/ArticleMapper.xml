@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="me.aowu.mapper.ArticleMapper">
+
+    <insert id="addArticle" parameterType="Article" useGeneratedKeys="true" keyProperty="cid" keyColumn="cid">
+        insert into article
+        (c_title,c_content,c_update,c_curr,c_total)
+        values
+        (#{c_title},#{c_content},#{c_update},#{c_curr},#{c_total});
+    </insert>
+
+    <insert id="addInTC" parameterType="Integer">
+        insert into tc
+        (t_id,c_id)
+        values
+        (#{t_id},#{c_id});
+    </insert>
+
+    <select id="queryALl" resultType="Article">
+        select * from article;
+    </select>
+
+    <delete id="delFromTC" parameterType="Integer">
+        delete from tc where t_id=#{t_id} and c_id=#{c_id};
+    </delete>
+
+    <delete id="delArticle" parameterType="Integer">
+        delete from article where cid=#{cid};
+    </delete>
+
+
+</mapper>
