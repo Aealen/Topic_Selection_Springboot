@@ -19,4 +19,6 @@ public interface StudentMapper {
 
     int selectArticle(Student student);
 
+    int delByAccount(String s_account);
+
 }

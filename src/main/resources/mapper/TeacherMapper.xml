@@ -5,7 +5,22 @@
 
 <mapper namespace="me.aowu.mapper.TeacherMapper">
 
+    <select id="queryAll" resultType="Teacher">
+        select * from teacher;
+    </select>
+    
+    <select id="queryByAccount" parameterType="String" resultType="Teacher">
+        select * from teacher where t_account=#{t_account};
+    </select>
 
+    <delete id="delByAccount" parameterType="String">
+        delete from teacher where t_account=#{t_account};
+    </delete>
+
+    <insert id="addTeacher" parameterType="Teacher">
+        insert into teacher (t_account,t_password,t_name,t_gender,t_college,t_capacity)
+        values (#{t_account},#{t_password},#{t_name},#{t_gender},#{t_college},#{t_capacity});
+    </insert>
 
 
 </mapper>

@@ -25,6 +25,9 @@
     <insert id="selectArticle" parameterType="Student">
         insert into student (s_select) values (#{s_select});
     </insert>
+    <delete id="delByAccount" parameterType="String">
+        delete from student where s_account=#{s_account}
+    </delete>
 
 
 </mapper>

@@ -22,6 +22,12 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
+    public int delByAccount(String s_account) {
+        int i = studentMapper.delByAccount(s_account);
+        return i;
+    }
+
+    @Override
     public List<Student> getStudentByName(String s_name) {
         List<Student> studentByName = studentMapper.getStudentByName(s_name);
         return studentByName;

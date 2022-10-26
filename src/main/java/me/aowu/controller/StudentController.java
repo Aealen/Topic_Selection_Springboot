@@ -60,7 +60,20 @@ public class StudentController {
         int i = studentService.addStudent(student);
         if (i!=0){
             retInfo.setStatus("ok");
-            retInfo.setData(String.valueOf(i));
+            retInfo.setData("User Add : "+i);
+        }else {
+            retInfo.setStatus("err");
+            retInfo.setData("未知错误!请联系管理员!");
+        }
+        return JSON.toJSONString(retInfo);
+    }
+
+    @DeleteMapping("del/{s_account}")
+    public String del(@PathVariable("s_account") String s_account){
+        int i = studentService.delByAccount(s_account);
+        if (i!=0){
+            retInfo.setStatus("ok");
+            retInfo.setData("User Del : "+s_account);
         }
         return JSON.toJSONString(retInfo);
     }
