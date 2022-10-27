@@ -15,6 +15,14 @@
         select * from student where s_account= #{s_account};
     </select>
 
+    <select id="getStudentByID" parameterType="Integer" resultType="Student">
+        select * from student where sid=#{sid};
+    </select>
+
+    <update id="setSelect" parameterType="Integer">
+        update student set s_select=#{cid} where sid=#{sid};
+    </update>
+
     <insert id="addStudent" parameterType="Student">
         insert into student
             (s_name,s_gender,s_college,s_major,s_class,s_account,s_password)

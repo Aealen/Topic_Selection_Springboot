@@ -14,10 +14,13 @@ public interface StudentMapper {
     List<Student> queryAll();
     List<Student> getStudentByName(String s_name);
     Student getStudentByAccount(String s_name);
+    Student getStudentByID(int sid);
 
     int addStudent(Student student);
 
-    int selectArticle(Student student);
+
+    int setSelect(int cid,int sid);
+
 
     int delByAccount(String s_account);
 

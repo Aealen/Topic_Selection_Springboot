@@ -15,7 +15,7 @@ public class Student {
     private String s_college;
     private String s_major;
     private String s_class;
-    private String s_select;
+    private int s_select;
     private String s_account;
     private String s_password;
 }

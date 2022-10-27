@@ -11,6 +11,6 @@ import org.springframework.stereotype.Controller;
 @NoArgsConstructor
 @Component
 public class RetInfo {
-    private String status;
-    private String data;
+    private String statuss;
+    private String datas;
 }

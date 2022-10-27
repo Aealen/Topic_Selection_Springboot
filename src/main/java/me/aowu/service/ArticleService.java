@@ -9,6 +9,10 @@ public interface ArticleService {
     int addInTC(int tid,int cid);
 
     List<Article> queryAll();
+    Article getByID(int id);
+
+    int addOneSub(int cid);
+    int minOneSub(int cid);
 
 
     int delFromTC(int t_id,int c_id);

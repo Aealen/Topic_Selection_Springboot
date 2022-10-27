@@ -13,6 +13,6 @@ public class Article {
     private String c_title;
     private String c_content;
     private String c_update;
-    private String c_curr;
-    private String c_total;
+    private int c_curr;
+    private int c_total;
 }

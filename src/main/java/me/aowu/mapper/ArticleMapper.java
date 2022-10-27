@@ -14,6 +14,10 @@ public interface ArticleMapper {
     int addInTC(int t_id,int c_id);
 
     List<Article> queryALl();
+    Article getByID(int id);
+
+    int addOneSub(int cid);
+    int minOneSub(int cid);
 
     int delFromTC(int t_id,int c_id);
     int delArticle(int cid);

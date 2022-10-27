@@ -11,8 +11,27 @@ import java.util.List;
 @Service
 public class ArticleServiceImpl implements ArticleService {
 
+
     @Autowired
     private ArticleMapper articleMapper;
+
+    @Override
+    public int addOneSub(int cid) {
+        int i = articleMapper.addOneSub(cid);
+        return i;
+    }
+
+    @Override
+    public int minOneSub(int cid) {
+        int i = articleMapper.minOneSub(cid);
+        return i;
+    }
+
+    @Override
+    public Article getByID(int id) {
+        Article byID = articleMapper.getByID(id);
+        return byID;
+    }
 
     @Override
     public int delFromTC(int t_id, int c_id) {

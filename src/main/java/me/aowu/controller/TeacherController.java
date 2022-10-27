@@ -37,8 +37,8 @@ public class TeacherController {
     public String add(String t_name,String t_gender,String t_college,String t_capacity,String t_account,String t_password){
 
         if (teacherService.queryByAccount(t_account)!=null){
-            retInfo.setStatus("err");
-            retInfo.setData("User is existed");
+            retInfo.setStatuss("err");
+            retInfo.setDatas("学工号已存在!!");
             return JSON.toJSONString(retInfo);
         }
         Teacher teacher = new Teacher();
@@ -51,11 +51,11 @@ public class TeacherController {
 
         int add = teacherService.addTeacher(teacher);
         if (add!=0){
-            retInfo.setStatus("ok");
-            retInfo.setData("User Added!!");
+            retInfo.setStatuss("ok");
+            retInfo.setDatas("添加用户成功!!");
         }else {
-            retInfo.setStatus("err");
-            retInfo.setData("未知错误!请联系管理员!");
+            retInfo.setStatuss("err");
+            retInfo.setDatas("未知错误!请联系管理员!");
         }
         return JSON.toJSONString(retInfo);
     }
@@ -64,11 +64,11 @@ public class TeacherController {
     public String delByAccount(@PathVariable("account") String account){
         int i = teacherService.delByAccount(account);
         if (i!=0){
-            retInfo.setStatus("ok");
-            retInfo.setData("Del User :" + account);
+            retInfo.setStatuss("ok");
+            retInfo.setDatas("Del User :" + account);
         }else {
-            retInfo.setStatus("err");
-            retInfo.setData("No Such account exist!");
+            retInfo.setStatuss("err");
+            retInfo.setDatas("No Such account exist!");
         }
 
         return JSON.toJSONString(retInfo);

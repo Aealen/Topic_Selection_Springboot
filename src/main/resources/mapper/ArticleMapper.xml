@@ -19,8 +19,19 @@
         (#{t_id},#{c_id});
     </insert>
 
+    <update id="addOneSub" parameterType="Integer">
+        update article set c_curr=c_curr+1 where cid=#{cid};
+    </update>
+    <update id="minOneSub" parameterType="Integer">
+        update article set c_curr=c_curr-1 where cid=#{cid};
+    </update>
+
     <select id="queryALl" resultType="Article">
         select * from article;
+    </select>
+
+    <select id="getByID" parameterType="Integer" resultType="Article">
+        select * from article where cid=#{id};
     </select>
 
     <delete id="delFromTC" parameterType="Integer">

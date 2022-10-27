@@ -27,6 +27,12 @@ public class ArticleController {
         return JSON.toJSONString(articles);
     }
 
+    @GetMapping("byid/{id}")
+    public String byID(@PathVariable("id") int id){
+        Article byID = articleService.getByID(id);
+        return JSON.toJSONString(byID);
+    }
+
 
     @PostMapping("add")
     public String addArticle(int tid,String c_title,String c_content,String c_update,String c_curr,String c_total){
@@ -34,8 +40,8 @@ public class ArticleController {
         article.setC_title(c_title);
         article.setC_content(c_content);
         article.setC_update(c_update);
-        article.setC_curr(c_curr);
-        article.setC_total(c_total);
+        article.setC_curr(Integer.parseInt(c_curr));
+        article.setC_total(Integer.parseInt(c_total));
         
         int articleID = articleService.addArticle(article);
         //获得刚增加的文章的主键ID
@@ -44,11 +50,11 @@ public class ArticleController {
 
         RetInfo retInfo = new RetInfo();
         if (TCstatus!=0){
-            retInfo.setStatus("ok");
+            retInfo.setStatuss("ok");
         }else {
-            retInfo.setStatus("err");
+            retInfo.setStatuss("err");
         }
-        retInfo.setData("articleID:"+articleID+"  TCStatus:"+TCstatus);
+        retInfo.setDatas("articleID:"+articleID+"  TCStatus:"+TCstatus);
 
         return JSON.toJSONString(retInfo);
     }
@@ -59,11 +65,11 @@ public class ArticleController {
         int delFromTC = articleService.delFromTC(t_id, c_id);
         RetInfo retInfo = new RetInfo();
         if (delArticle==delFromTC && delFromTC==1){
-            retInfo.setStatus("ok");
-            retInfo.setData("Success");
+            retInfo.setStatuss("ok");
+            retInfo.setDatas("Success");
         }else {
-            retInfo.setStatus("err");
-            retInfo.setData("Error");
+            retInfo.setStatuss("err");
+            retInfo.setDatas("Error");
         }
 
         return JSON.toJSONString(retInfo);
