@@ -8,7 +8,11 @@
     <select id="queryAll" resultType="Teacher">
         select * from teacher;
     </select>
-    
+
+    <select id="getByID" parameterType="Integer" resultType="Teacher">
+        select * from teacher where tid=#{tid};
+    </select>
+
     <select id="queryByAccount" parameterType="String" resultType="Teacher">
         select * from teacher where t_account=#{t_account};
     </select>

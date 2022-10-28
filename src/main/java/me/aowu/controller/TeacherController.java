@@ -32,6 +32,11 @@ public class TeacherController {
         Teacher teacher = teacherService.queryByAccount(account);
         return JSON.toJSONString(teacher);
     }
+    @GetMapping("byid/{id}")
+    public String byaccount(@PathVariable("id") int id){
+        Teacher byID = teacherService.getByID(id);
+        return JSON.toJSONString(byID);
+    }
 
     @PostMapping("add")
     public String add(String t_name,String t_gender,String t_college,String t_capacity,String t_account,String t_password){

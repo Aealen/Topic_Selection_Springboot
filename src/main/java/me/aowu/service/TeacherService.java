@@ -8,6 +8,7 @@ public interface TeacherService {
 
     List<Teacher> queryAll();
     Teacher queryByAccount(String t_account);
+    Teacher getByID(int tid);
 
 
     int delByAccount(String t_account);

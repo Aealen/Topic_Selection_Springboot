@@ -22,6 +22,12 @@ public class ArticleServiceImpl implements ArticleService {
     }
 
     @Override
+    public List<Article> getByTID(int tid) {
+        List<Article> byTID = articleMapper.getByTID(tid);
+        return byTID;
+    }
+
+    @Override
     public int minOneSub(int cid) {
         int i = articleMapper.minOneSub(cid);
         return i;

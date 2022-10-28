@@ -13,8 +13,11 @@ public interface TeacherMapper {
 
     List<Teacher> queryAll();
     Teacher queryByAccount(String t_account);
+    Teacher getByID(int tid);
 
     int delByAccount(String t_account);
 
     int addTeacher(Teacher teacher);
+
+
 }

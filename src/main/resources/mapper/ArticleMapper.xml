@@ -42,5 +42,17 @@
         delete from article where cid=#{cid};
     </delete>
 
+    <select id="getByTID" parameterType="Integer" resultType="Article">
+        SELECT
+            article.*
+        FROM
+            article
+        having
+                article.cid in
+                (SELECT c_id from tc where t_id = #{tid});
+    </select>
+
+
+
 
 </mapper>

@@ -15,6 +15,8 @@ public interface ArticleMapper {
 
     List<Article> queryALl();
     Article getByID(int id);
+    List<Article> getByTID(int tid);
+
 
     int addOneSub(int cid);
     int minOneSub(int cid);

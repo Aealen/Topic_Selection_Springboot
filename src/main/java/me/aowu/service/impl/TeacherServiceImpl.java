@@ -15,6 +15,13 @@ public class TeacherServiceImpl implements TeacherService {
     @Autowired
     private TeacherMapper teacherMapper;
 
+
+    @Override
+    public Teacher getByID(int tid) {
+        Teacher byID = teacherMapper.getByID(tid);
+        return byID;
+    }
+
     @Override
     public int addTeacher(Teacher teacher) {
         int add = teacherMapper.addTeacher(teacher);

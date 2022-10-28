@@ -17,4 +17,6 @@ public interface ArticleService {
 
     int delFromTC(int t_id,int c_id);
     int delArticle(int cid);
+
+    List<Article> getByTID(int tid);
 }

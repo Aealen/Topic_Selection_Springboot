@@ -33,6 +33,12 @@ public class ArticleController {
         return JSON.toJSONString(byID);
     }
 
+    @GetMapping("bytid/{tid}")
+    public String byTID(@PathVariable("tid") int tid){
+        List<Article> byTID = articleService.getByTID(tid);
+        return JSON.toJSONString(byTID);
+    }
+
 
     @PostMapping("add")
     public String addArticle(int tid,String c_title,String c_content,String c_update,String c_curr,String c_total){
